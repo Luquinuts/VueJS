@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" src="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue Js</title>
+
+
+</head>
+<body>
+    <div id="app">
+        Ingrese su edad:
+        <input type="number" v-model="years">
+        <p v-if="years>=18">Es mayor de edad.</p>   
+    </div>
+
+    <div id="app2">
+        Ingrese un valor entre 1 y 100:
+            <input type="number" v-model="number" min="1" max="100"></p>
+            <p v-if="(number<=9 && (number!=null))">Tiene un dígito</p>
+            <p v-else-if="number<=99 && (number!=null)">Tiene dos dígitos</p>
+            <p v-else-if="number!=null">Tiene tres dígitos</p>
+    </div>
+
+    <script>
+        const app = new Vue ({
+            el: '#app',
+            data: { 
+                years : null
+            }
+        })
+
+
+        const app2 = new Vue ({
+            el: '#app2',
+            data: { 
+                number: null
+            }
+        })
+    </script>
+</body>
+</html>

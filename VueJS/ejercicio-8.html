@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" src="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue Js</title>
+
+
+</head>
+<body>
+    <div id="app">
+        <p>
+            <input type="radio" value="Sin estudios" v-model="studys" id="sinestudios">
+            <label for="sinestudios">Sin estudios</label>
+        </p>        
+        <p>
+            <input type="radio" value="Primarios" v-model="studys" id="primarios">
+            <label for="primarios">Estudios Primarios</label>
+        </p>
+        <p>
+            <input type="radio" value="Secundarios" v-model="studys" id="secundarios">
+            <label for="secundarios">Estudios Secundarios</label>
+        </p>
+        <p>
+            <input checked type="radio" value="Universitarios" v-model="studys" id="universitarios">
+            <label for="universitarios">Estudios Universitarios</label>
+        </p>
+        <p>Sus estudios son:  {{studys}}</p>
+    </div>
+
+    <script>
+        const app = new Vue ({
+            el: '#app',
+            data:{ 
+                studys: 'Sin estudios'
+            }
+        })
+    </script>
+</body>
+</html>

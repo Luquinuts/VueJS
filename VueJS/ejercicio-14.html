@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" src="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue Js</title>
+
+
+</head>
+<body>
+    <div id="app">
+        <p>Tamaño de la fuente:
+            <input type="range" v-model="fontSize" min=10 max=100>{{fontSize}}
+        </p>
+        <p>Color:
+            <input type="color" v-model="colorSpec">
+        </p>     
+
+        <p v-bind:style="{'font-size':fontSize+'px', 'color': colorSpec}">Párrafo de prueba</p>
+    </div>
+    <script>
+        const app = new Vue ({
+            el: '#app',
+            data: { 
+                fontSize: 20,
+                colorSpec: '#000'
+            }
+        })
+    </script>
+</body>
+</html>

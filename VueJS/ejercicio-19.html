@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" src="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue Js</title>
+</head>
+<body>
+    <div id="app">
+        <hola-mundo idioma="ingles"></hola-mundo>
+        <hola-mundo idioma="castellano"></hola-mundo>
+    </div>
+    
+    <script>
+          Vue.component('hola-mundo', {
+            props: ['idioma'],
+            template: `<div>
+                        <p v-if="idioma=='castellano'">Hola Mundo!</p>
+                        <p v-if="idioma=='ingles'">Hello World</p>
+                    </div>`
+        })
+        const app = new Vue ({el: '#app'})
+    </script>
+</body>
+</html>

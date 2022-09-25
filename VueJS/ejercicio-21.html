@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" src="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue Js</title>
+</head>
+<body>
+    <div id="app">
+        <selector-numerico v-bind:valor="1" v-bind:minimo="0" v-bind:maximo="20"></selector-numerico>
+    </div>
+
+    <script>
+        Vue.component('selector-numerico', {
+            props:['valor', 'minimo', 'maximo'],
+            template: `<div><span style="width:1rem;display:inline-block;background:#ff0">{{cant}}</span>
+                        <button v-on:click="incrementar()">+</button>
+                        <button v-on:click="decrementar()">-</button>
+                    </div>`,
+            data: function() {
+                return {
+                    cant: this.valor
+                }
+            },
+            methods: {
+                incrementar: function() {
+                    if (this.cant<this.maximo)
+                    this.cant++;
+                },
+                decrementar: function() {
+                    if (this.cant>this.minimo)
+                    this.cant--;
+                }      
+            }
+        })
+
+        
+        const app = new Vue ({el: '#app'})
+
+    </script>
+</body>
+</html>
